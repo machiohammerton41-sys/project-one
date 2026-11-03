@@ -1,0 +1,476 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Evaluating National Educational Outcomes: KJSEA 2025 Analytics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap');
+        body { font-family: 'Inter', sans-serif; background-color: #f8fafc; }
+        .glass-card { background: rgba(255, 255, 255, 0.9); backdrop-filter: blur(10px); border: 1px solid rgba(226, 232, 240, 0.8); }
+        .custom-scrollbar::-webkit-scrollbar { width: 6px; height: 6px; }
+        .custom-scrollbar::-webkit-scrollbar-track { background: #f1f5f9; }
+        .custom-scrollbar::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        .custom-scrollbar::-webkit-scrollbar-thumb:hover { background: #94a3b8; }
+    </style>
+</head>
+<body class="text-slate-800 antialiased custom-scrollbar">
+
+    <!-- Top Navigation Header -->
+    <header class="sticky top-0 z-50 bg-slate-900 text-white shadow-md">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+            <div class="flex items-center space-x-3">
+                <div class="p-2 bg-indigo-600 rounded-lg">
+                    <i class="fa-solid fa-chart-line text-lg text-white"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-lg leading-tight">KJSEA 2025 Analytics Portfolio</h1>
+                    <p class="text-xs text-slate-400">Kenya Junior School Education Assessment • Inaugural Grade 9 Dataset</p>
+                </div>
+            </div>
+            <div class="flex items-center space-x-3">
+                <span class="inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium bg-indigo-500/10 text-indigo-300 border border-indigo-500/20">
+                    <i class="fa-solid fa-database mr-1.5 text-xs"></i> 1,130,547 Learners Evaluated
+                </span>
+                <button onclick="window.print()" class="hidden sm:inline-flex items-center px-3 py-1.5 border border-slate-700 text-xs font-medium rounded-md text-slate-200 bg-slate-800 hover:bg-slate-700 transition">
+                    <i class="fa-solid fa-print mr-1.5"></i> Export / Print
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Main Container -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 space-y-8">
+
+        <!-- Executive Summary Banner -->
+        <section class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 rounded-2xl p-6 sm:p-8 text-white shadow-xl relative overflow-hidden">
+            <div class="absolute -right-10 -bottom-10 opacity-10 text-indigo-400">
+                <i class="fa-solid fa-graduation-cap text-[220px]"></i>
+            </div>
+            <div class="relative z-10 max-w-3xl space-y-3">
+                <div class="inline-flex items-center px-3 py-1 rounded-full text-xs font-semibold bg-indigo-500/20 text-indigo-300 border border-indigo-500/30">
+                    Portfolio Project Overview
+                </div>
+                <h2 class="text-2xl sm:text-3xl font-extrabold tracking-tight">Evaluating National Educational Outcomes</h2>
+                <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
+                    An end-to-end data evaluation analyzing performance, gender parity dynamics, 6-year cohort progression, and regional age-grade distributions across all 47 Kenyan counties and 10 core learning areas.
+                </p>
+                <div class="pt-2 flex flex-wrap gap-4 text-xs text-slate-300">
+                    <div><span class="text-indigo-400 font-semibold">Primary Stack:</span> Microsoft Excel (Data Modeling, Pivot Tables, Formulas) & Chart.js</div>
+                    <div><span class="text-indigo-400 font-semibold">Source:</span> Official KNEC 2025 KJSEA Public Statistics</div>
+                </div>
+            </div>
+        </section>
+
+        <!-- KPI Scorecard Section -->
+        <section class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <!-- Metric 1 -->
+            <div class="glass-card rounded-xl p-5 shadow-sm hover:shadow-md transition">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Total Enrolled Cohort</span>
+                    <div class="p-2 bg-blue-50 text-blue-600 rounded-lg"><i class="fa-solid fa-users"></i></div>
+                </div>
+                <div class="mt-3">
+                    <div class="text-2xl font-bold text-slate-900">1,130,547</div>
+                    <p class="text-xs text-slate-500 mt-1"><span class="text-slate-700 font-medium">51.2% Male</span> | <span class="text-slate-700 font-medium">48.8% Female</span></p>
+                </div>
+            </div>
+
+            <!-- Metric 2 -->
+            <div class="glass-card rounded-xl p-5 shadow-sm hover:shadow-md transition">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Cohort Retention Rate</span>
+                    <div class="p-2 bg-emerald-50 text-emerald-600 rounded-lg"><i class="fa-solid fa-chart-line"></i></div>
+                </div>
+                <div class="mt-3">
+                    <div class="text-2xl font-bold text-slate-900">88.17%</div>
+                    <p class="text-xs text-emerald-600 font-medium mt-1"><i class="fa-solid fa-arrow-right text-[10px] mr-1"></i>Grade 3 (2019) to Grade 9 (2025)</p>
+                </div>
+            </div>
+
+            <!-- Metric 3 -->
+            <div class="glass-card rounded-xl p-5 shadow-sm hover:shadow-md transition">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">Highest Subject Pass</span>
+                    <div class="p-2 bg-purple-50 text-purple-600 rounded-lg"><i class="fa-solid fa-flask"></i></div>
+                </div>
+                <div class="mt-3">
+                    <div class="text-2xl font-bold text-slate-900">80.17%</div>
+                    <p class="text-xs text-purple-700 font-medium mt-1">Integrated Science (Meeting + Exceeding)</p>
+                </div>
+            </div>
+
+            <!-- Metric 4 -->
+            <div class="glass-card rounded-xl p-5 shadow-sm hover:shadow-md transition">
+                <div class="flex items-center justify-between">
+                    <span class="text-xs font-semibold uppercase tracking-wider text-slate-500">STEM Priority Gap</span>
+                    <div class="p-2 bg-amber-50 text-amber-600 rounded-lg"><i class="fa-solid fa-triangle-exclamation"></i></div>
+                </div>
+                <div class="mt-3">
+                    <div class="text-2xl font-bold text-slate-900">33.24%</div>
+                    <p class="text-xs text-amber-600 font-medium mt-1">Mathematics Meeting/Exceeding Rate</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visual Analytics Dashboard Grid -->
+        <section class="grid grid-cols-1 lg:grid-cols-2 gap-8">
+            <!-- Chart 1: Subject Performance -->
+            <div class="glass-card rounded-2xl p-6 shadow-sm border border-slate-200">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-base">Learning Area Performance Spectrum</h3>
+                        <p class="text-xs text-slate-500">Proportion of learners across 4 competency levels (%)</p>
+                    </div>
+                    <div class="p-2 bg-slate-100 rounded-lg text-slate-600"><i class="fa-solid fa-chart-bar"></i></div>
+                </div>
+                <div class="h-80 relative">
+                    <canvas id="subjectChart"></canvas>
+                </div>
+            </div>
+
+            <!-- Chart 2: Gender Disparity -->
+            <div class="glass-card rounded-2xl p-6 shadow-sm border border-slate-200">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-base">Gender Parity Analysis</h3>
+                        <p class="text-xs text-slate-500">Pass Rate Comparison (Meeting Expectations & Above)</p>
+                    </div>
+                    <div class="p-2 bg-slate-100 rounded-lg text-slate-600"><i class="fa-solid fa-venus-mars"></i></div>
+                </div>
+                <div class="h-80 relative">
+                    <canvas id="genderChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Secondary Visuals: Cohort Trajectory & Regional Demographics -->
+        <section class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- 6-Year Progression Chart -->
+            <div class="glass-card rounded-2xl p-6 shadow-sm border border-slate-200 lg:col-span-1">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-base">Cohort Retention (2019–2025)</h3>
+                        <p class="text-xs text-slate-500">Grade 3 KEYA to Grade 9 KJSEA</p>
+                    </div>
+                    <div class="p-2 bg-indigo-50 text-indigo-600 rounded-lg"><i class="fa-solid fa-user-graduate"></i></div>
+                </div>
+                <div class="h-64 relative">
+                    <canvas id="retentionChart"></canvas>
+                </div>
+                <div class="mt-4 p-3 bg-slate-50 rounded-lg border border-slate-200 text-xs text-slate-600">
+                    <span class="font-semibold text-slate-800">Net Attrition:</span> 11.83% cumulative drop (~151,691 learners lost over 6 years).
+                </div>
+            </div>
+
+            <!-- Top vs Bottom Overage Counties -->
+            <div class="glass-card rounded-2xl p-6 shadow-sm border border-slate-200 lg:col-span-2">
+                <div class="flex items-center justify-between mb-4">
+                    <div>
+                        <h3 class="font-bold text-slate-900 text-base">Regional Age Distortion (Overage Learners % $\ge$ 16 yrs)</h3>
+                        <p class="text-xs text-slate-500">Highest vs. Lowest Overage Learner Proportions across Counties</p>
+                    </div>
+                    <div class="p-2 bg-slate-100 rounded-lg text-slate-600"><i class="fa-solid fa-map-location-dot"></i></div>
+                </div>
+                <div class="h-64 relative">
+                    <canvas id="countyChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+        <!-- Data Breakdown Table -->
+        <section class="glass-card rounded-2xl p-6 shadow-sm border border-slate-200">
+            <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between mb-6 space-y-3 sm:space-y-0">
+                <div>
+                    <h3 class="font-bold text-slate-900 text-lg">National Performance Breakdown by Learning Area</h3>
+                    <p class="text-xs text-slate-500">Complete performance distribution across all 10 evaluated subjects</p>
+                </div>
+                <div class="text-xs text-slate-500">
+                    <span class="inline-block w-3 h-3 bg-indigo-600 rounded-sm mr-1"></span> National Standard
+                </div>
+            </div>
+            
+            <div class="overflow-x-auto custom-scrollbar">
+                <table class="w-full text-left text-xs border-collapse">
+                    <thead>
+                        <tr class="bg-slate-100 text-slate-700 border-b border-slate-200 font-semibold">
+                            <th class="py-3 px-4">Learning Area</th>
+                            <th class="py-3 px-4 text-center">Exceeding (%)</th>
+                            <th class="py-3 px-4 text-center">Meeting (%)</th>
+                            <th class="py-3 px-4 text-center">Approaching (%)</th>
+                            <th class="py-3 px-4 text-center">Below (%)</th>
+                            <th class="py-3 px-4 text-center bg-indigo-50/50 text-indigo-900">Total Pass Rate (ME+)</th>
+                            <th class="py-3 px-4 text-center">Female Pass Rate</th>
+                            <th class="py-3 px-4 text-center">Male Pass Rate</th>
+                            <th class="py-3 px-4 text-center">Gender Gap</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-200 text-slate-600">
+                        <tr class="hover:bg-slate-50/80 transition">
+                            <td class="py-3 px-4 font-semibold text-slate-800">Integrated Science</td>
+                            <td class="py-3 px-4 text-center text-emerald-600 font-medium">33.40%</td>
+                            <td class="py-3 px-4 text-center">46.77%</td>
+                            <td class="py-3 px-4 text-center">15.22%</td>
+                            <td class="py-3 px-4 text-center text-rose-600">4.61%</td>
+                            <td class="py-3 px-4 text-center font-bold text-indigo-700 bg-indigo-50/30">80.17%</td>
+                            <td class="py-3 px-4 text-center">81.10%</td>
+                            <td class="py-3 px-4 text-center">79.28%</td>
+                            <td class="py-3 px-4 text-center text-emerald-600 font-semibold">+1.82%</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50/80 transition">
+                            <td class="py-3 px-4 font-semibold text-slate-800">Creative Arts & Sports</td>
+                            <td class="py-3 px-4 text-center text-emerald-600 font-medium">28.92%</td>
+                            <td class="py-3 px-4 text-center">48.15%</td>
+                            <td class="py-3 px-4 text-center">17.40%</td>
+                            <td class="py-3 px-4 text-center text-rose-600">5.53%</td>
+                            <td class="py-3 px-4 text-center font-bold text-indigo-700 bg-indigo-50/30">77.07%</td>
+                            <td class="py-3 px-4 text-center">78.45%</td>
+                            <td class="py-3 px-4 text-center">75.76%</td>
+                            <td class="py-3 px-4 text-center text-emerald-600 font-semibold">+2.69%</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50/80 transition">
+                            <td class="py-3 px-4 font-semibold text-slate-800">Social Studies</td>
+                            <td class="py-3 px-4 text-center text-emerald-600 font-medium">22.15%</td>
+                            <td class="py-3 px-4 text-center">43.80 font-medium">%</td>
+                            <td class="py-3 px-4 text-center">24.10%</td>
+                            <td class="py-3 px-4 text-center text-rose-600">9.95%</td>
+                            <td class="py-3 px-4 text-center font-bold text-indigo-700 bg-indigo-50/30">65.95%</td>
+                            <td class="py-3 px-4 text-center">67.20%</td>
+                            <td class="py-3 px-4 text-center">64.76%</td>
+                            <td class="py-3 px-4 text-center text-emerald-600 font-semibold">+2.44%</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50/80 transition">
+                            <td class="py-3 px-4 font-semibold text-slate-800">Kiswahili</td>
+                            <td class="py-3 px-4 text-center text-emerald-600 font-medium">18.45%</td>
+                            <td class="py-3 px-4 text-center">39.60%</td>
+                            <td class="py-3 px-4 text-center">31.25%</td>
+                            <td class="py-3 px-4 text-center text-rose-600">10.70%</td>
+                            <td class="py-3 px-4 text-center font-bold text-indigo-700 bg-indigo-50/30">58.05%</td>
+                            <td class="py-3 px-4 text-center">64.95%</td>
+                            <td class="py-3 px-4 text-center">51.48%</td>
+                            <td class="py-3 px-4 text-center text-emerald-600 font-semibold">+13.47%</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50/80 transition">
+                            <td class="py-3 px-4 font-semibold text-slate-800">Agriculture</td>
+                            <td class="py-3 px-4 text-center text-emerald-600 font-medium">14.30%</td>
+                            <td class="py-3 px-4 text-center">41.20%</td>
+                            <td class="py-3 px-4 text-center">33.40%</td>
+                            <td class="py-3 px-4 text-center text-rose-600">11.10%</td>
+                            <td class="py-3 px-4 text-center font-bold text-indigo-700 bg-indigo-50/30">55.50%</td>
+                            <td class="py-3 px-4 text-center">54.80%</td>
+                            <td class="py-3 px-4 text-center">56.16%</td>
+                            <td class="py-3 px-4 text-center text-slate-500 font-semibold">-1.36%</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50/80 transition">
+                            <td class="py-3 px-4 font-semibold text-slate-800">Pre-Technical Studies</td>
+                            <td class="py-3 px-4 text-center text-emerald-600 font-medium">12.80%</td>
+                            <td class="py-3 px-4 text-center">38.90%</td>
+                            <td class="py-3 px-4 text-center">36.50%</td>
+                            <td class="py-3 px-4 text-center text-rose-600">11.80%</td>
+                            <td class="py-3 px-4 text-center font-bold text-indigo-700 bg-indigo-50/30">51.70%</td>
+                            <td class="py-3 px-4 text-center">49.10%</td>
+                            <td class="py-3 px-4 text-center">54.17%</td>
+                            <td class="py-3 px-4 text-center text-slate-500 font-semibold">-5.07%</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50/80 transition">
+                            <td class="py-3 px-4 font-semibold text-slate-800">English</td>
+                            <td class="py-3 px-4 text-center text-emerald-600 font-medium">11.20%</td>
+                            <td class="py-3 px-4 text-center">36.46%</td>
+                            <td class="py-3 px-4 text-center">40.35%</td>
+                            <td class="py-3 px-4 text-center text-rose-600">11.99%</td>
+                            <td class="py-3 px-4 text-center font-bold text-indigo-700 bg-indigo-50/30">47.66%</td>
+                            <td class="py-3 px-4 text-center">52.89%</td>
+                            <td class="py-3 px-4 text-center">42.67%</td>
+                            <td class="py-3 px-4 text-center text-emerald-600 font-semibold">+10.22%</td>
+                        </tr>
+                        <tr class="hover:bg-slate-50/80 transition bg-rose-50/20">
+                            <td class="py-3 px-4 font-semibold text-rose-900">Mathematics</td>
+                            <td class="py-3 px-4 text-center text-emerald-600 font-medium">8.42%</td>
+                            <td class="py-3 px-4 text-center">24.82%</td>
+                            <td class="py-3 px-4 text-center">30.89%</td>
+                            <td class="py-3 px-4 text-center text-rose-600 font-bold">12.66%</td>
+                            <td class="py-3 px-4 text-center font-bold text-rose-700 bg-rose-100/40">33.24%</td>
+                            <td class="py-3 px-4 text-center">34.97%</td>
+                            <td class="py-3 px-4 text-center">31.59%</td>
+                            <td class="py-3 px-4 text-center text-emerald-600 font-semibold">+3.38%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Executive Findings & Policy Recommendations -->
+        <section class="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <div class="glass-card rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+                <div class="flex items-center space-x-3 text-indigo-900">
+                    <i class="fa-solid fa-magnifying-glass-chart text-xl"></i>
+                    <h3 class="font-bold text-lg">Key Data Findings</h3>
+                </div>
+                <ul class="space-y-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-circle-chevron-right text-indigo-500 mt-1 text-xs"></i>
+                        <span><strong>Mathematics Underperformance:</strong> Math is the lowest-performing subject nationally, with only 33.24% of candidates meeting/exceeding expectations and 12.66% failing to meet minimum benchmarks.</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-circle-chevron-right text-indigo-500 mt-1 text-xs"></i>
+                        <span><strong>Female Literacy Superiority:</strong> Female learners demonstrate significant leads in language mastery (+13.47% gap in Kiswahili and +10.22% gap in English).</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-circle-chevron-right text-indigo-500 mt-1 text-xs"></i>
+                        <span><strong>Regional Age Disparities:</strong> Coastal (Kilifi 64.9%, Kwale 64.8%) and ASAL counties (Garissa 63.4%) record overage learner rates 3x higher than Central counties (Kiambu 20.7%).</span>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="glass-card rounded-2xl p-6 shadow-sm border border-slate-200 space-y-4">
+                <div class="flex items-center space-x-3 text-slate-900">
+                    <i class="fa-solid fa-lightbulb text-xl text-amber-500"></i>
+                    <h3 class="font-bold text-lg">Strategic Recommendations</h3>
+                </div>
+                <ul class="space-y-3 text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-check text-emerald-500 mt-1 text-xs"></i>
+                        <span><strong>Targeted STEM Remediation:</strong> Implement foundational numeracy interventions in Grades 7–9 to align math performance with strong scientific literacy (Integrated Sci at 80.17%).</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-check text-emerald-500 mt-1 text-xs"></i>
+                        <span><strong>Early Entry & ASAL Support:</strong> Address late school entry, repetition, and socio-economic drivers causing 60%+ overage progression in Coastal/Arid zones.</span>
+                    </li>
+                    <li class="flex items-start space-x-2">
+                        <i class="fa-solid fa-check text-emerald-500 mt-1 text-xs"></i>
+                        <span><strong>Boy-Child Literacy Engagement:</strong> Introduce tailored reading interventions to bridge the significant language attainment gap among male learners.</span>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 text-slate-400 py-8 border-t border-slate-800 mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between text-xs space-y-4 sm:space-y-0">
+            <div>
+                <p>© 2025 Educational Analytics Portfolio. Built with Microsoft Excel & Web Stack.</p>
+                <p class="text-slate-500 mt-0.5">Based on official Kenya National Examinations Council (KNEC) public reports.</p>
+            </div>
+            <div class="flex items-center space-x-4">
+                <span class="hover:text-slate-200 transition">Data Modeling</span>
+                <span>•</span>
+                <span class="hover:text-slate-200 transition">Interactive Dashboards</span>
+                <span>•</span>
+                <span class="hover:text-slate-200 transition">Cohort Analysis</span>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Chart Scripts -->
+    <script>
+        // Common Chart Defaults
+        Chart.defaults.font.family = "'Inter', sans-serif";
+        Chart.defaults.color = '#64748b';
+
+        // 1. Subject Performance Chart
+        const ctxSubject = document.getElementById('subjectChart').getContext('2d');
+        new Chart(ctxSubject, {
+            type: 'bar',
+            data: {
+                labels: ['Integrated Sci', 'Creative Arts', 'Social Studies', 'Kiswahili', 'Agriculture', 'Pre-Tech', 'English', 'Mathematics'],
+                datasets: [
+                    { label: 'Exceeding (EE)', data: [33.40, 28.92, 22.15, 18.45, 14.30, 12.80, 11.20, 8.42], backgroundColor: '#10b981' },
+                    { label: 'Meeting (ME)', data: [46.77, 48.15, 43.80, 39.60, 41.20, 38.90, 36.46, 24.82], backgroundColor: '#6366f1' },
+                    { label: 'Approaching (AE)', data: [15.22, 17.40, 24.10, 31.25, 33.40, 36.50, 40.35, 30.89], backgroundColor: '#f59e0b' },
+                    { label: 'Below (BE)', data: [4.61, 5.53, 9.95, 10.70, 11.10, 11.80, 11.99, 12.66], backgroundColor: '#f43f5e' }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'bottom', labels: { boxWidth: 12 } } },
+                scales: {
+                    x: { stacked: true, grid: { display: false } },
+                    y: { stacked: true, max: 100, ticks: { callback: v => v + '%' } }
+                }
+            }
+        });
+
+        // 2. Gender Parity Chart
+        const ctxGender = document.getElementById('genderChart').getContext('2d');
+        new Chart(ctxGender, {
+            type: 'bar',
+            data: {
+                labels: ['Integrated Sci', 'Creative Arts', 'Kiswahili', 'Social Studies', 'Agriculture', 'Pre-Tech', 'English', 'Mathematics'],
+                datasets: [
+                    { label: 'Female Pass %', data: [81.10, 78.45, 64.95, 67.20, 54.80, 49.10, 52.89, 34.97], backgroundColor: '#ec4899' },
+                    { label: 'Male Pass %', data: [79.28, 75.76, 51.48, 64.76, 56.16, 54.17, 42.67, 31.59], backgroundColor: '#3b82f6' }
+                ]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { position: 'bottom', labels: { boxWidth: 12 } } },
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { max: 100, ticks: { callback: v => v + '%' } }
+                }
+            }
+        });
+
+        // 3. Cohort Retention Chart
+        const ctxRetention = document.getElementById('retentionChart').getContext('2d');
+        new Chart(ctxRetention, {
+            type: 'line',
+            data: {
+                labels: ['Grade 3 (2019)', 'Grade 6 (2022)', 'Grade 9 (2025)'],
+                datasets: [{
+                    label: 'Learner Cohort Count',
+                    data: [1282150, 1253577, 1130459],
+                    borderColor: '#6366f1',
+                    backgroundColor: 'rgba(99, 102, 241, 0.1)',
+                    fill: true,
+                    tension: 0.3,
+                    pointRadius: 6,
+                    pointBackgroundColor: '#4f46e5'
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { min: 1000000, ticks: { callback: v => (v/1000000).toFixed(2) + 'M' } }
+                }
+            }
+        });
+
+        // 4. County Overage Ranking Chart
+        const ctxCounty = document.getElementById('countyChart').getContext('2d');
+        new Chart(ctxCounty, {
+            type: 'bar',
+            data: {
+                labels: ['Kilifi', 'Kwale', 'Garissa', 'Mandera', 'Tana River', 'Nyeri', 'Nairobi', 'Embu', 'Kiambu'],
+                datasets: [{
+                    label: 'Overage Learners % (Age >= 16)',
+                    data: [64.9, 64.8, 63.4, 62.1, 60.5, 23.4, 23.1, 22.9, 20.7],
+                    backgroundColor: [
+                        '#f43f5e', '#f43f5e', '#f43f5e', '#f43f5e', '#f43f5e',
+                        '#10b981', '#10b981', '#10b981', '#10b981'
+                    ]
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: { legend: { display: false } },
+                scales: {
+                    x: { grid: { display: false } },
+                    y: { max: 100, ticks: { callback: v => v + '%' } }
+                }
+            }
+        });
+    </script>
+</body>
+</html>
